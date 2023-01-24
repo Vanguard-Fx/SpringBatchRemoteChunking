@@ -1,0 +1,20 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: remote-chunking
+  profiles:
+    active: local
+  datasource:
+    url: "jdbc:postgresql://localhost:5433/mail_merge"
+    username: postgres
+  batch:
+    jdbc:
+      initialize-schema: always
+      schema: classpath:org/springframework/batch/core/schema-postgresql.sql
+  flyway:
+    enabled: false
+logging:
+  level:
+    root: info

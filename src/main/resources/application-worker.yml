@@ -1,0 +1,12 @@
+server:
+  port: 8087
+
+spring:
+  kafka:
+    consumer:
+      group-id: "elab-worker"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.spring.batch.remotechunking.example.application.serde.ChunkRequestDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.spring.batch.remotechunking.example.application.serde.ChunkResponseSerializer

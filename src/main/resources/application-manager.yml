@@ -1,0 +1,12 @@
+server:
+  port: 8086
+
+spring:
+  kafka:
+    consumer:
+      group-id: "elab-manager"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.spring.batch.remotechunking.example.application.serde.ChunkResponseDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.spring.batch.remotechunking.example.application.serde.ChunkRequestSerializer
